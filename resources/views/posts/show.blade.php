@@ -50,13 +50,13 @@
 	<div class="wrapper-morefrom">
 		<div class="text-morefrom">More from {{ $post->categorie->name }}</div>
 		
-		<!-- Affiche 4 post aleatoire et n'affiche pas le post sur lequel on se trouve -->
+		<!-- Affiche 4 post aleatoire et n'affiche pas le post sur lequel on se trouve (laravel $query builder: Laravel – Orderby Random using rand() and DB::raw() example) -->
 		<?php $recent_post = $post->categorie_id; ?>
-            <?php $ressource_recent = $post->id; ?>
+            <?php $post_recent = $post->id; ?>
                 @include('posts._recent', 
-				['post' => \App\Models\Post::where(function ($query) use ($recent_post, $ressource_recent) 
+				['post' => \App\Models\Post::where(function ($query) use ($recent_post, $post_recent) 
 				{
-                $query->where('categorie_id', '=', $recent_post)->where('id', '!=', $ressource_recent);
+                $query->where('categorie_id', '=', $recent_post)->where('id', '!=', $post_recent);
                 })->orderBy(DB::raw('RAND()'))->take(4)->get()
                 ])
                     
@@ -74,6 +74,7 @@
 	</div>
 
 	<div class="post-reply">
+		<!-- Boucle pour aller chercher tous les commentaires du post(tous les post n'ont pas de com.) -->
 	@foreach($post -> commentaires as $commentaire)
 		<div class="image-reply-post"></div>
 		

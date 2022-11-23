@@ -1,27 +1,30 @@
 @extends('template.index')
 
+@section('title')
+  Free Grid Wordpress Theme
+@endsection
+
 @section('content')
+<section class="work">
+	
 
-<section class="work" id="list">
-
-@foreach($category->posts as $post)
+@foreach($category -> posts as $post)
 
 <figure class="white">
-	<a href="{{ route('post.show', ['post'=>$post->id, 'slug' => \Illuminate\Support\Str::slug($post->title)]) }}">
-		<img src="{{ asset('storage/' . $post->image) }}" alt=""/>
+	<a href="{{ route('posts.show', ['post'=>$post->id, 'slug' => \Illuminate\Support\Str::slug($post->title)]) }}">
+		<img src="img/{{$post->image}}" alt=""/>
 		<dl>
 			<dt>{{ $post->title }}</dt>
-			<dd>{!! $post->description !!}</dd>
+			<dd>{{ \Illuminate\Support\Str::limit($post->content, 150, $end='...') }}</dd>
 		</dl>
 		</a>
         <div id="wrapper-part-info">
-            <div class="part-info-image"><img src="{{ asset('storage/' . $post->categories->icone) }}" alt="" width="28" height="28"/></div>
-            <div id="part-info">{{ $post->categories->name }}</div>
+            <div class="part-info-image"><img src="{{ asset('storage/' . $post->categorie->icone) }}" alt="" width="28" height="28"/></div>
+            <div id="part-info">{{ $post->categorie->name }}</div>
 		</div>
 </figure>
 
+
 @endforeach
 
-</section>
-
-@endsection
+ @endsection

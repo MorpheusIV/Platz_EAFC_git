@@ -8,24 +8,11 @@
 
         </div>
 
+
     </div>
 
 
 
-<div id="wrapper-oldnew">
-<div class="oldnew">
-    <div class="wrapper-oldnew-prev">
-        <div id="">     <div class="">
-    @foreach ($posts as $post)
-        {{ $post->name }}
-    @endforeach
-     </div>
-
- 
-     {{ $posts->links('pagination::bootstrap-4')}}</div>
-    </div>
-</div>
-</div>
 
 <div id="wrapper-thank">
 <div class="thank">

@@ -1,7 +1,8 @@
 <!-- HEAD -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Detailed Single Post</title>
+<base href="http://localhost/ApprDev/platz_exam/public/">
+<title>@yield('title') </title>
 
 <!-- Behavioral Meta Data -->
 	<meta name="apple-mobile-web-app-capable" content="yes">

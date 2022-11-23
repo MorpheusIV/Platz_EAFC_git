@@ -6,7 +6,7 @@
 
 @section('content')
 <section class="work">
-
+<!-- Boucle permettant d'afficher la card du post avec un text limité a 150 caractere -->
 @foreach($posts as $post)
 
 <figure class="white">
@@ -25,5 +25,11 @@
 
 @endforeach
 					</section>
+
+
+<!-- Pagination			 -->
+ 
+{{ $posts->links() }}
+
 
  @endsection

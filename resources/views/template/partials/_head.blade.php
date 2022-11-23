@@ -1,6 +1,7 @@
 <!-- HEAD -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="http://localhost/ApprDev/platz_exam/public/">
 <title>Platz - @yield('title')</title>
 
 <!-- Behavioral Meta Data -->

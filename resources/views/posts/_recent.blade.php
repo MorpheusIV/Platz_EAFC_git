@@ -1,5 +1,6 @@
 
         <div class="image-morefrom">
+          <!-- php count permet de compter le nombre d'image dans echo jusqu'a 4 -->
 <?php $count = 0; ?>
 
 @foreach($post as $post)  
